@@ -78,6 +78,54 @@ jar {
 	}
 }
 
+// Task to copy the built jar to the Minecraft 'mods' folder defined by the MC_PATH environment variable
+def mcPath = System.getenv('MC_PATH')
+if (mcPath == null || mcPath.trim().isEmpty()) {
+	logger.lifecycle("MC_PATH environment variable is not set; 'installToMc' task will be a no-op. Set MC_PATH to your .minecraft directory to enable automatic install.")
+}
+
+tasks.register('installToMc') {
+	group = 'distribution'
+	description = 'Copy the built mod jar to the MC_PATH\\mods folder (if MC_PATH env var is set)'
+
+	doLast {
+		if (mcPath == null || mcPath.trim().isEmpty()) {
+			logger.lifecycle("Skipping installToMc: MC_PATH is not defined.")
+			return
+		}
+
+		def modsDir = file(mcPath + File.separator + 'mods')
+		if (!modsDir.exists()) {
+			modsDir.mkdirs()
+		}
+
+		// The jar artifact produced by the 'jar' task will be in build/libs
+		def libsDir = file("${buildDir}${File.separator}libs")
+		if (!libsDir.exists()) {
+			logger.lifecycle("No libs directory found at ${libsDir}; nothing to copy.")
+			return
+		}
+
+		def jars = libsDir.listFiles().findAll { it.name.endsWith('.jar') }
+		if (jars.isEmpty()) {
+			logger.lifecycle("No jar files found in ${libsDir}; nothing to copy to ${modsDir}.")
+			return
+		}
+
+		// Pick the most recently modified jar (the built artifact)
+		def jarToCopy = jars.max { it.lastModified() }
+		def dest = new File(modsDir, jarToCopy.name)
+		jarToCopy.withInputStream { ins -> dest.withOutputStream { outs -> outs << ins } }
+		logger.lifecycle("Copied ${jarToCopy.name} to ${modsDir}")
+	}
+}
+
+// Ensure installToMc runs after build so the artifact exists
+tasks.named('build') {
+	finalizedBy tasks.named('installToMc')
+}
+
+
 // configure the maven publication
 publishing {
 	publications {

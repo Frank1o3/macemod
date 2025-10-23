@@ -13,8 +13,8 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Vec3d;
-import java.util.List;
 
+import java.util.List;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;

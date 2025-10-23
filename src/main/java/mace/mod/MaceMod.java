@@ -20,5 +20,6 @@ public class MaceMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Este mod es para el cliente!");
 	}
 }
