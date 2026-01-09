@@ -38,10 +38,10 @@ public class MacemodClient implements ClientModInitializer {
 
     // In Mojang mappings, categories are NOT typically just String IDs but they are
     // a real object
-    public static final KeyMapping.Category MY_CATEGORY = new KeyMapping.Category(
+    public static final @NotNull KeyMapping.Category MY_CATEGORY = new KeyMapping.Category(
             Identifier.withDefaultNamespace("category.macemod.main"));
 
-    public static final KeyMapping MY_KEYBIND = new KeyMapping(
+    public static final @NotNull KeyMapping MY_KEYBIND = new KeyMapping(
             "key.macemod.scan",
             InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_R,
@@ -55,7 +55,8 @@ public class MacemodClient implements ClientModInitializer {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             var player = mc.player;
             var level = mc.level;
-            if (player == null || level == null) return;
+            if (player == null || level == null)
+                return;
 
             McModConfig cfg = HOLDER.get();
 
@@ -180,7 +181,7 @@ public class MacemodClient implements ClientModInitializer {
         Vec3 playerPos = player.getEyePosition(1.0F);
 
         // FIX: Explicitly handle the list nullability and type safety
-        List<LivingEntity> targets = level.getEntitiesOfClass(
+        List<@NotNull LivingEntity> targets = level.getEntitiesOfClass(
                 LivingEntity.class,
                 player.getBoundingBox().inflate(reach),
                 e -> e != null && e != player && e.isAlive());
