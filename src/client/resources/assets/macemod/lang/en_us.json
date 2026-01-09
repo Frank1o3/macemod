@@ -1,22 +1,40 @@
 {
   "key.macemod.scan": "Scan Hotbar",
-  "category.macemod": "Mace Assist",
+  "category.macemod.main": "Mace Assist",
   "message.macemod.scan_result": "[MaceMod] Mapped Mace slot=%s, Axe slot=%s",
+  
   "text.autoconfig.mace-mod.title": "MaceMod Configuration",
+  
+  "text.autoconfig.mace-mod.option.AutoAim": "Enable Auto-Aim",
+  "text.autoconfig.mace-mod.option.AutoAim.@Tooltip": "Automatically tracks targets within your FOV. Uses human-like smoothing to avoid detection.",
+  
+  "text.autoconfig.mace-mod.option.Smoothing": "Camera Smoothing",
+  "text.autoconfig.mace-mod.option.Smoothing.@Tooltip": "Controls tracking speed (0-100%). Higher = faster/snappier, Lower = smoother/more human-like. Recommended: 15-25%.",
+  
+  "text.autoconfig.mace-mod.option.minDelayMs": "Minimum Attack Delay (ms)",
+  "text.autoconfig.mace-mod.option.minDelayMs.@Tooltip": "Minimum wait time before swapping/attacking. Prevents instant bot-like reactions that trigger anti-cheat. Recommended: 100-150ms.",
+  
+  "text.autoconfig.mace-mod.option.maxDelayMs": "Maximum Attack Delay (ms)",
+  "text.autoconfig.mace-mod.option.maxDelayMs.@Tooltip": "Maximum wait time for randomized delays. Creates realistic human reaction variation. Recommended: 250-350ms.",
+  
+  "text.autoconfig.mace-mod.option.fallTriggerDistance": "Mace Fall Threshold",
+  "text.autoconfig.mace-mod.option.fallTriggerDistance.@Tooltip": "Distance (in blocks) you must fall before auto-swapping to Mace. The '5-Block Rule' maximizes fall damage. Default: 5.0 blocks.",
+  
   "text.autoconfig.mace-mod.option.SurvivalReach": "Survival Reach Distance",
-  "text.autoconfig.mace-mod.option.SurvivalReach.@Tooltip": "The reach distance for attacks in Survival mode.",
+  "text.autoconfig.mace-mod.option.SurvivalReach.@Tooltip": "Attack reach in Survival mode. Vanilla limit is 3.0 blocks. Higher values may get flagged on anti-cheat servers!",
+  
   "text.autoconfig.mace-mod.option.CreativeReach": "Creative Reach Distance",
-  "text.autoconfig.mace-mod.option.CreativeReach.@Tooltip": "The reach distance for attacks in Creative mode.",
-  "text.autoconfig.mace-mod.option.axeSlot": "Axe Slot",
-  "text.autoconfig.mace-mod.option.axeSlot.@Tooltip": "The hotbar slot for the axe (-1 to disable).",
-  "text.autoconfig.mace-mod.option.maceSlot": "Mace Slot",
-  "text.autoconfig.mace-mod.option.maceSlot.@Tooltip": "The hotbar slot for the mace (-1 to disable).",
-  "text.autoconfig.mace-mod.option.FOV": "Fov of the macro",
-  "text.autoconfig.mace-mod.option.FOV.@Tooltip": "The amount in degrees that the macro can see",
-  "text.autoconfig.mace-mod.option.FallDistance": "Fall Distance",
-  "text.autoconfig.mace-mod.option.FallDistance.@Tooltip": "The minimum fall distance for mace attacks.",
-  "text.autoconfig.mace-mod.option.Cooldown": "Enable Cooldown",
-  "text.autoconfig.mace-mod.option.Cooldown.@Tooltip": "Toggle whether to respect the attack cooldown (0 = off, 1 = on).",
-  "text.autoconfig.mace-mod.option.Smoothing": "Enable Smoothing the camera movement",
-  "text.autoconfig.mace-mod.option.Smoothing.@Tooltip": "Smoothing the movement of the camera by the mod."
+  "text.autoconfig.mace-mod.option.CreativeReach.@Tooltip": "Attack reach in Creative mode. Vanilla Creative allows up to 5.0 blocks.",
+  
+  "text.autoconfig.mace-mod.option.axeSlot": "Axe Hotbar Slot",
+  "text.autoconfig.mace-mod.option.axeSlot.@Tooltip": "Hotbar slot (1-9) containing your axe. Set to -1 to disable axe attacks. Use 'R' key to auto-scan.",
+  
+  "text.autoconfig.mace-mod.option.maceSlot": "Mace Hotbar Slot",
+  "text.autoconfig.mace-mod.option.maceSlot.@Tooltip": "Hotbar slot (1-9) containing your mace. Set to -1 to disable mace attacks. Use 'R' key to auto-scan.",
+  
+  "text.autoconfig.mace-mod.option.FOV": "Detection FOV (degrees)",
+  "text.autoconfig.mace-mod.option.FOV.@Tooltip": "Field of view angle for target detection. Lower = must aim closer to target. Recommended: 25-35 degrees for legit gameplay.",
+
+  "text.autoconfig.mace-mod.option.Cooldown": "Attack Cooldown Threshold",
+  "text.autoconfig.mace-mod.option.Cooldown.@Tooltip": "Only attack when weapon charge is at this level (0.0-1.0). Set to 1.0 to only attack when fully charged for maximum damage."
 }
