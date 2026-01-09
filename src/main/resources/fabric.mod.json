@@ -3,9 +3,9 @@
 	"id": "macemod",
 	"version": "${version}",
 	"name": "macemod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Auto mace for you!",
 	"authors": [
-		"Me!"
+		"Frank1o3"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -20,19 +20,17 @@
 		],
 		"client": [
 			"mace.mod.MacemodClient"
+		],
+		"modmenu": [
+			"mace.mod.ModMenuIntegration"
 		]
 	},
-	"mixins": [
-		"macemod.mixins.json",
-		{
-			"config": "macemod.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.18.4",
 		"minecraft": "~1.21.11",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"cloth-config": ">=21.11.153",
+		"modmenu": ">=17.0.0-beta.1"
 	}
 }
