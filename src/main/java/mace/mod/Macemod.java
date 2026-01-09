@@ -5,7 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MaceMod implements ModInitializer {
+public class Macemod implements ModInitializer {
 	public static final String MOD_ID = "macemod";
 
 	// This logger is used to write text to the console and the log file.
@@ -20,6 +20,5 @@ public class MaceMod implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
-		LOGGER.info("Este mod es para el cliente!");
 	}
 }
