@@ -21,6 +21,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.Vec3;
 import org.lwjgl.glfw.GLFW;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -29,7 +30,7 @@ import java.util.Random;
 
 public class MacemodClient implements ClientModInitializer {
     private static final Minecraft mc = Minecraft.getInstance();
-    private static ConfigHolder<McModConfig> HOLDER;
+    private static @NotNull ConfigHolder<McModConfig> HOLDER;
     public static final String MOD_ID = "macemod";
 
     private static final Random random = new Random();
